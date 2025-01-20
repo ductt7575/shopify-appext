@@ -1,0 +1,58 @@
+{
+  "name": "extension-loyalty-plus",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -r -k -P \"npm run vite:dev\" \"npm run shopify:dev\"",
+    "build": "npm run vite:build && npm run shopify:build",
+    "deploy": "npm run vite:build && npm run shopify:deploy",
+    "vite:dev": "vite",
+    "vite:build": "vite build",
+    "shopify": "npm exec shopify",
+    "shopify:dev": "shopify app dev --path ../../",
+    "shopify:build": "npm exec shopify app build --path ../../",
+    "shopify:deploy": "npm exec shopify app deploy --path ../../",
+    "generate": "shopify app generate",
+    "prettier": "prettier"
+  },
+  "trustedDependencies": [
+    "@shopify/plugin-cloudflare"
+  ],
+  "dependencies": {
+    "@preact/compat": "^18.3.1",
+    "@preact/signals": "^1.2.1",
+    "clsx": "^2.0.0",
+    "preact": "^10.25.1",
+    "preact-custom-element": "^4.3.0",
+    "@tanstack/react-query": "^5.62.10",
+    "zustand": "^5.0.2"
+  },
+  "author": "ductt-account",
+  "private": true,
+  "workspaces": [
+    "frontend"
+  ],
+  "devDependencies": {
+    "@eslint/js": "^9.16.0",
+    "@preact/preset-vite": "^2.9.2",
+    "@shopify/prettier-plugin-liquid": "^1.6.2",
+    "@types/node": "^22.10.1",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.1",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.0",
+    "eslint": "^9.16.0",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^10.1.0",
+    "postcss-rem-to-pixel": "^4.1.2",
+    "prettier": "^3.4.2",
+    "tailwind-scrollbar": "^3.1.0",
+    "tailwindcss": "^3.4.16",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.17.0",
+    "vite": "^4.4.9",
+    "vite-plugin-shopify": "^2.1.1"
+  }
+}

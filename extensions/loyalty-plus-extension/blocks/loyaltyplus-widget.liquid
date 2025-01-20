@@ -1,0 +1,12 @@
+{% liquid
+  render 'app-init'
+
+  render 'vite-tag' with 'app-init.tsx'
+%}
+
+{% schema %}
+{
+  "name": "Loyalty Plus",
+  "target": "body"
+}
+{% endschema %}

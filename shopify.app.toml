@@ -1,0 +1,23 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "4dff6d54850d75373f8d4284e9b0f758"
+application_url = "https://shopify.dev/apps/default-app-home"
+embedded = true
+name = "extension-loyalty-plus"
+handle = "extension-loyalty-plus-1"
+
+[build]
+dev_store_url = "ductt-1.myshopify.com"
+
+[webhooks]
+api_version = "2025-01"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = ""
+
+[auth]
+redirect_urls = [ "https://shopify.dev/apps/default-app-home/api/auth" ]
+
+[pos]
+embedded = false
