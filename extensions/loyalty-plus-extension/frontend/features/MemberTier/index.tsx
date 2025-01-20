@@ -1,37 +1,37 @@
-import { HeaderFeature } from "@LoyaltyPlus/features/WidgetPopup/components/WidgetHeader";
-import { TFeature } from "@LoyaltyPlus/constant";
-import { useState } from "react";
+import { TFeature } from '@LoyaltyPlus/constant'
+import { HeaderFeature } from '@LoyaltyPlus/features/WidgetPopup/components/WidgetHeader'
+import { useState } from 'react'
 
 export const MemberTier = ({
   title,
-  onFeatureClick,
+  onFeatureClick
 }: {
-  title: string;
-  onFeatureClick: (feature: TFeature | null) => void;
+  title: string
+  onFeatureClick: (feature: TFeature | null) => void
 }) => {
-  const [activeTier, setActiveTier] = useState<string | null>("Bronze");
+  const [activeTier, setActiveTier] = useState<string | null>('Bronze')
   const tiers = [
     {
-      name: "Bronze",
+      name: 'Bronze',
       description:
-        "Welcome to the starting tier! With the Bronze membership, enjoy essential perks to kickstart your shopping journey. Earn points effortlessly and get a 5% discount on every purchase!",
+        'Welcome to the starting tier! With the Bronze membership, enjoy essential perks to kickstart your shopping journey. Earn points effortlessly and get a 5% discount on every purchase!'
     },
     {
-      name: "Silver",
+      name: 'Silver',
       description:
-        "The Gold tier offers premium privileges! Collect 5,000 points to enjoy a 15% discount, free shipping, and special gifts curated just for our valued members.",
+        'The Gold tier offers premium privileges! Collect 5,000 points to enjoy a 15% discount, free shipping, and special gifts curated just for our valued members.'
     },
     {
-      name: "Gold",
+      name: 'Gold',
       description:
-        "Step into a world of greater rewards with the Silver tier! Accumulate 1,000 points to upgrade and unlock a 10% discount along with exclusive benefits just for you.",
+        'Step into a world of greater rewards with the Silver tier! Accumulate 1,000 points to upgrade and unlock a 10% discount along with exclusive benefits just for you.'
     },
     {
-      name: "Platinum",
+      name: 'Platinum',
       description:
-        "Reserved for our most loyal customers, the Platinum tier delivers ultimate perks! With 10,000 points, unlock a 20% discount, nationwide free shipping, and VIP gifts tailored exclusively for you. ",
-    },
-  ];
+        'Reserved for our most loyal customers, the Platinum tier delivers ultimate perks! With 10,000 points, unlock a 20% discount, nationwide free shipping, and VIP gifts tailored exclusively for you. '
+    }
+  ]
   return (
     <div className="tw-animate-slide-left">
       <HeaderFeature title={title} onFeatureClick={onFeatureClick} />
@@ -55,12 +55,12 @@ export const MemberTier = ({
               key={tier.name}
               className={`tw-cursor-pointer tw-transition-all tw-duration-300 tw-text-center ${
                 activeTier === tier.name
-                  ? "tw-text-[#bb254a]"
-                  : "tw-text-[#303030]"
+                  ? 'tw-text-[#bb254a]'
+                  : 'tw-text-[#303030]'
               }`}
               onClick={() => setActiveTier(tier.name)}
               style={{
-                width: `${100 / tiers.length}%`,
+                width: `${100 / tiers.length}%`
               }}
             >
               {tier.name}
@@ -70,7 +70,7 @@ export const MemberTier = ({
             className="tw-absolute tw-bottom-0 tw-left-0 tw-h-[2px] tw-bg-[#bb254a] tw-transition-transform tw-duration-300"
             style={{
               width: `${100 / tiers.length}%`,
-              transform: `translateX(${tiers.findIndex((t) => t.name === activeTier) * 100}%)`,
+              transform: `translateX(${tiers.findIndex((t) => t.name === activeTier) * 100}%)`
             }}
           />
         </ul>
@@ -79,7 +79,7 @@ export const MemberTier = ({
             <div
               key={tier.name}
               className={`tw-px-[16px] ${
-                activeTier === tier.name ? "tw-block" : "tw-hidden"
+                activeTier === tier.name ? 'tw-block' : 'tw-hidden'
               }`}
             >
               {tier.description}
@@ -88,5 +88,5 @@ export const MemberTier = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

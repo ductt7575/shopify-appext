@@ -1,67 +1,68 @@
-import IconEarn from "@LoyaltyPlus/assets/svg/icon-earn.svg";
-import IconRedeem from "@LoyaltyPlus/assets/svg/icon-redeem.svg";
-import IconReferral from "@LoyaltyPlus/assets/svg/icon-referral.svg";
-import IconPointHistory from "@LoyaltyPlus/assets/svg/icon-point-history.svg";
-import IconCancel from "@LoyaltyPlus/assets/svg/Icon-cancel.svg";
-import { useState } from "preact/hooks";
-import { FEATURE, TFeature } from "@LoyaltyPlus/constant";
-import { Earning } from "@LoyaltyPlus/features/Earning";
-import { Reward } from "@LoyaltyPlus/features/Reward";
-import { DefaultBody } from "./components/DefaultBody";
-import { Referral } from "@LoyaltyPlus/features/Referral";
-import { MemberTier } from "@LoyaltyPlus/features/MemberTier";
+import IconCancel from '@LoyaltyPlus/assets/svg/Icon-cancel.svg'
+import IconEarn from '@LoyaltyPlus/assets/svg/icon-earn.svg'
+import IconPointHistory from '@LoyaltyPlus/assets/svg/icon-point-history.svg'
+import IconRedeem from '@LoyaltyPlus/assets/svg/icon-redeem.svg'
+import IconReferral from '@LoyaltyPlus/assets/svg/icon-referral.svg'
+import { FEATURE, TFeature } from '@LoyaltyPlus/constant'
+import { Earning } from '@LoyaltyPlus/features/Earning'
+import { MemberTier } from '@LoyaltyPlus/features/MemberTier'
+import { Referral } from '@LoyaltyPlus/features/Referral'
+import { Reward } from '@LoyaltyPlus/features/Reward'
+import { useState } from 'preact/hooks'
+
+import { DefaultBody } from './components/DefaultBody'
 
 interface IProps {
-  onClose: () => void;
-  isClosing: boolean;
+  onClose: () => void
+  isClosing: boolean
 }
 
 export const WidgetPopup = ({ onClose, isClosing }: IProps) => {
-  const [activeComponent, setActiveComponent] = useState<TFeature | null>(null);
-  const [title, setTitle] = useState<string>("");
-  const [isFirstRender, setIsFirstRender] = useState(true);
+  const [activeComponent, setActiveComponent] = useState<TFeature | null>(null)
+  const [title, setTitle] = useState<string>('')
+  const [isFirstRender, setIsFirstRender] = useState(true)
 
   const listFeatures = [
-    { name: "Earn points", icon: IconEarn, type: FEATURE.EARN_POINT },
-    { name: "Redeem points", icon: IconRedeem, type: FEATURE.REDEEM_POINT },
+    { name: 'Earn points', icon: IconEarn, type: FEATURE.EARN_POINT },
+    { name: 'Redeem points', icon: IconRedeem, type: FEATURE.REDEEM_POINT },
     {
-      name: "Referral program",
+      name: 'Referral program',
       icon: IconReferral,
-      type: FEATURE.REFERRAL_PROGRAM,
+      type: FEATURE.REFERRAL_PROGRAM
     },
-    { name: "Member tier", icon: IconPointHistory, type: FEATURE.MEMBER_TIER },
-  ];
+    { name: 'Member tier', icon: IconPointHistory, type: FEATURE.MEMBER_TIER }
+  ]
 
   const renderActiveComponent = () => {
     switch (activeComponent) {
       case FEATURE.EARN_POINT:
-        return <Earning title={title} onFeatureClick={setActiveComponent} />;
+        return <Earning title={title} onFeatureClick={setActiveComponent} />
       case FEATURE.REDEEM_POINT:
-        return <Reward title={title} onFeatureClick={setActiveComponent} />;
+        return <Reward title={title} onFeatureClick={setActiveComponent} />
       case FEATURE.REFERRAL_PROGRAM:
-        return <Referral title={title} onFeatureClick={setActiveComponent} />;
+        return <Referral title={title} onFeatureClick={setActiveComponent} />
       case FEATURE.MEMBER_TIER:
-        return <MemberTier title={title} onFeatureClick={setActiveComponent} />;
+        return <MemberTier title={title} onFeatureClick={setActiveComponent} />
       case null:
       default:
         return (
           <DefaultBody
             listFeatures={listFeatures}
             onFeatureClick={(feature) => {
-              setActiveComponent(feature);
-              setIsFirstRender(false);
+              setActiveComponent(feature)
+              setIsFirstRender(false)
             }}
             setTitle={setTitle}
             isFirstRender={isFirstRender}
           />
-        );
+        )
     }
-  };
+  }
 
   return (
     <div
       className={`mb:tw-w-[324px] tw-bg-[#BB254A] h-sm:tw-w-full tw-w-full tw-flex tw-flex-col tw-justify-center tw-items-center mb:tw-rounded-[24px] tw-absolute h-sm:tw-h-screen h-sm:tw-bottom-[-72px] h-sm:tw-rounded-none h-sm:tw-right-[-22px] mb:tw-bottom-[64px] mb:tw-right-0 tw-bottom-[-72px] tw-right-[-22px] tw-z-[1000] mb:tw-h-[570px] tw-h-screen tw-transform-none tw-shadow-[0_4px_46.3px_rgba(0,0,0,0.25)] tw-overflow-hidden ${
-        isClosing ? "tw-animate-popup-close" : "tw-animate-popup-open"
+        isClosing ? 'tw-animate-popup-close' : 'tw-animate-popup-open'
       }`}
     >
       <div className="tw-flex tw-flex-col tw-justify-center tw-items-center tw-w-full tw-h-[102px] tw-px-[24px] tw-py-[18px]">
@@ -92,5 +93,5 @@ export const WidgetPopup = ({ onClose, isClosing }: IProps) => {
         <img src={IconCancel} alt="IconCancel" className="w-full h-full" />
       </div>
     </div>
-  );
-};
+  )
+}

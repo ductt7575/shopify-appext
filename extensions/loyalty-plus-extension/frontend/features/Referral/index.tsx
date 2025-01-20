@@ -1,14 +1,14 @@
-import { HeaderFeature } from "@LoyaltyPlus/features/WidgetPopup/components/WidgetHeader";
-import { TFeature } from "@LoyaltyPlus/constant";
+import { TFeature } from '@LoyaltyPlus/constant'
+import { HeaderFeature } from '@LoyaltyPlus/features/WidgetPopup/components/WidgetHeader'
 
 export const Referral = ({
   title,
-  onFeatureClick,
+  onFeatureClick
 }: {
-  title: string;
-  onFeatureClick: (feature: TFeature | null) => void;
+  title: string
+  onFeatureClick: (feature: TFeature | null) => void
 }) => {
-  const POINTS = 500;
+  const POINTS = 500
   return (
     <div className="tw-animate-slide-left">
       <HeaderFeature title={title} onFeatureClick={onFeatureClick} />
@@ -35,5 +35,5 @@ export const Referral = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

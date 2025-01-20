@@ -1,22 +1,23 @@
-import { useState } from "preact/hooks";
-import { WidgetPopup } from "../features/WidgetPopup";
-import { WidgetButton } from "../features/WidgetButton";
+import { useState } from 'preact/hooks'
+
+import { WidgetButton } from '../features/WidgetButton'
+import { WidgetPopup } from '../features/WidgetPopup'
 
 export const App = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isClosing, setIsClosing] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
+  const [isClosing, setIsClosing] = useState(false)
 
   const handleTogglePopup = () => {
     if (isOpen && !isClosing) {
-      setIsClosing(true);
+      setIsClosing(true)
       setTimeout(() => {
-        setIsOpen(false);
-        setIsClosing(false);
-      }, 500);
+        setIsOpen(false)
+        setIsClosing(false)
+      }, 500)
     } else if (!isOpen) {
-      setIsOpen(true);
+      setIsOpen(true)
     }
-  };
+  }
 
   return (
     <div className="tw-fixed tw-w-full tw-bottom-[72px] tw-right-[22px] tw-z-[10000]">
@@ -25,5 +26,5 @@ export const App = () => {
       )}
       <WidgetButton onClick={handleTogglePopup} />
     </div>
-  );
-};
+  )
+}

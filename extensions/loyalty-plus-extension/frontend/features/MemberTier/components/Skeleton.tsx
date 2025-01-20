@@ -1,3 +1,3 @@
 export const Skeleton = () => {
-  return <div>skeleton</div>;
-};
+  return <div>skeleton</div>
+}

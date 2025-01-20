@@ -1,11 +1,11 @@
-import IconChevronRight from "@LoyaltyPlus/assets/svg/Icon-chevron-right.svg";
-import { TFeature } from "@LoyaltyPlus/constant";
+import IconChevronRight from '@LoyaltyPlus/assets/svg/Icon-chevron-right.svg'
+import { TFeature } from '@LoyaltyPlus/constant'
 export const HeaderFeature = ({
   title,
-  onFeatureClick,
+  onFeatureClick
 }: {
-  title: string;
-  onFeatureClick: (feature: TFeature | null) => void;
+  title: string
+  onFeatureClick: (feature: TFeature | null) => void
 }) => {
   return (
     <div class="tw-flex tw-gap-[8px] tw-p-[16px]">
@@ -23,5 +23,5 @@ export const HeaderFeature = ({
         {title}
       </p>
     </div>
-  );
-};
+  )
+}

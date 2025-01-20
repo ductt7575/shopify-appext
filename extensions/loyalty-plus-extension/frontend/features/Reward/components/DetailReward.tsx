@@ -1,7 +1,8 @@
-import IconChevronRight from "@LoyaltyPlus/assets/svg/Icon-chevron-right.svg";
-import IconSales from "@LoyaltyPlus/assets/svg/Icon-sales.svg";
-import IconSalesBg from "@LoyaltyPlus/assets/svg/Icon-sales-bg.svg";
-import { Skeleton } from "./Skeleton";
+import IconChevronRight from '@LoyaltyPlus/assets/svg/Icon-chevron-right.svg'
+import IconSales from '@LoyaltyPlus/assets/svg/Icon-sales.svg'
+import IconSalesBg from '@LoyaltyPlus/assets/svg/Icon-sales-bg.svg'
+
+import { Skeleton } from './Skeleton'
 
 export const DetailReward = ({ title }: { title: string }) => {
   return (
@@ -23,7 +24,7 @@ export const DetailReward = ({ title }: { title: string }) => {
           <div
             className="tw-w-[80px] tw-h-[94px] tw-flex tw-items-center tw-justify-center tw-bg-cover"
             style={{
-              backgroundImage: `url(${IconSalesBg})`,
+              backgroundImage: `url(${IconSalesBg})`
             }}
           >
             <div className="tw-flex tw-flex-col tw-items-center tw-gap-[4px]">
@@ -53,5 +54,5 @@ export const DetailReward = ({ title }: { title: string }) => {
       </div>
       <Skeleton />
     </>
-  );
-};
+  )
+}

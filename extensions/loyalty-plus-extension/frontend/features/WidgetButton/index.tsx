@@ -1,11 +1,11 @@
-import IconButton from "@LoyaltyPlus/assets/svg/Icon-loyalty.svg";
+import IconButton from '@LoyaltyPlus/assets/svg/Icon-loyalty.svg'
 
 interface IProps {
-  onClick: () => void;
+  onClick: () => void
 }
 
 export const WidgetButton = (props: IProps) => {
-  const { onClick } = props;
+  const { onClick } = props
 
   return (
     <div
@@ -17,5 +17,5 @@ export const WidgetButton = (props: IProps) => {
         Rewards
       </span>
     </div>
-  );
-};
+  )
+}

@@ -1,36 +1,36 @@
-import { HeaderFeature } from "@LoyaltyPlus/features/WidgetPopup/components/WidgetHeader";
-import { TFeature } from "@LoyaltyPlus/constant";
+import { TFeature } from '@LoyaltyPlus/constant'
+import { HeaderFeature } from '@LoyaltyPlus/features/WidgetPopup/components/WidgetHeader'
 
 export const Reward = ({
   title,
-  onFeatureClick,
+  onFeatureClick
 }: {
-  title: string;
-  onFeatureClick: (feature: TFeature | null) => void;
+  title: string
+  onFeatureClick: (feature: TFeature | null) => void
 }) => {
   const listToEarning = [
     {
-      label: "Up to $300 off",
-      description: "Expire after 2 weeks",
-      point: "30 points",
-      btn: "Redeem",
-      url: "#",
+      label: 'Up to $300 off',
+      description: 'Expire after 2 weeks',
+      point: '30 points',
+      btn: 'Redeem',
+      url: '#'
     },
     {
-      label: "Up to $300 off",
-      description: "Expire after 2 weeks",
-      point: "30 points",
-      btn: "Redeem",
-      url: "#",
+      label: 'Up to $300 off',
+      description: 'Expire after 2 weeks',
+      point: '30 points',
+      btn: 'Redeem',
+      url: '#'
     },
     {
-      label: "Up to $300 off",
-      description: "Expire after 2 weeks",
-      point: "30 points",
-      btn: "Redeem",
-      url: "#",
-    },
-  ];
+      label: 'Up to $300 off',
+      description: 'Expire after 2 weeks',
+      point: '30 points',
+      btn: 'Redeem',
+      url: '#'
+    }
+  ]
 
   return (
     <div className="tw-animate-slide-left">
@@ -62,9 +62,9 @@ export const Reward = ({
                   {item.btn}
                 </a>
               </div>
-            );
+            )
           })}
       </div>
     </div>
-  );
-};
+  )
+}

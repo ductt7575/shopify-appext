@@ -1,33 +1,33 @@
-import { HeaderFeature } from "@LoyaltyPlus/features/WidgetPopup/components/WidgetHeader";
-import { TFeature } from "@LoyaltyPlus/constant";
+import { TFeature } from '@LoyaltyPlus/constant'
+import { HeaderFeature } from '@LoyaltyPlus/features/WidgetPopup/components/WidgetHeader'
 
 export const Earning = ({
   title,
-  onFeatureClick,
+  onFeatureClick
 }: {
-  title: string;
-  onFeatureClick: (feature: TFeature | null) => void;
+  title: string
+  onFeatureClick: (feature: TFeature | null) => void
 }) => {
   const listToEarning = [
     {
-      label: "Place an order",
-      point: "1 point per 1₫ spent",
-      btn: "Buy now",
-      url: "#",
+      label: 'Place an order',
+      point: '1 point per 1₫ spent',
+      btn: 'Buy now',
+      url: '#'
     },
     {
-      label: "Complete profile",
-      point: "100 points",
-      btn: "Join now",
-      url: "#",
+      label: 'Complete profile',
+      point: '100 points',
+      btn: 'Join now',
+      url: '#'
     },
     {
-      label: "Create account",
-      point: "2,002 points",
-      btn: "Update",
-      url: "#",
-    },
-  ];
+      label: 'Create account',
+      point: '2,002 points',
+      btn: 'Update',
+      url: '#'
+    }
+  ]
 
   return (
     <div className="tw-animate-slide-left">
@@ -56,9 +56,9 @@ export const Earning = ({
                   {item.btn}
                 </a>
               </div>
-            );
+            )
           })}
       </div>
     </div>
-  );
-};
+  )
+}

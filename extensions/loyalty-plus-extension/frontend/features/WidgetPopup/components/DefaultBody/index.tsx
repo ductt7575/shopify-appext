@@ -1,21 +1,21 @@
-import IconChevronRight from "@LoyaltyPlus/assets/svg/Icon-chevron-right.svg";
-import { TFeature } from "@LoyaltyPlus/constant";
+import IconChevronRight from '@LoyaltyPlus/assets/svg/Icon-chevron-right.svg'
+import { TFeature } from '@LoyaltyPlus/constant'
 interface IProps {
-  listFeatures: { name: string; icon: string; type: TFeature }[];
-  onFeatureClick: (feature: TFeature) => void;
-  setTitle: (title: string) => void;
-  isFirstRender: boolean;
+  listFeatures: { name: string; icon: string; type: TFeature }[]
+  onFeatureClick: (feature: TFeature) => void
+  setTitle: (title: string) => void
+  isFirstRender: boolean
 }
 
 export const DefaultBody = ({
   listFeatures,
   onFeatureClick,
   setTitle,
-  isFirstRender,
+  isFirstRender
 }: IProps) => (
   <div
     className={`${
-      isFirstRender ? "" : "tw-animate-slide-right"
+      isFirstRender ? '' : 'tw-animate-slide-right'
     } tw-px-[20px] tw-py-[24px] tw-flex tw-flex-col tw-gap-[20px] tw-flex-1`}
   >
     <div className="tw-request-sign-in tw-flex tw-flex-col tw-items-center tw-gap-[12px]">
@@ -43,8 +43,8 @@ export const DefaultBody = ({
         <div
           key={index}
           onClick={() => {
-            onFeatureClick(feature.type);
-            setTitle(feature.name);
+            onFeatureClick(feature.type)
+            setTitle(feature.name)
           }}
           className="tw-flex tw-justify-between tw-items-center tw-w-full tw-px-[12px] tw-py-[12px] tw-border tw-border-[#cccccc] tw-rounded-[8px] tw-cursor-pointer"
         >
@@ -65,4 +65,4 @@ export const DefaultBody = ({
       </a>
     </div>
   </div>
-);
+)
